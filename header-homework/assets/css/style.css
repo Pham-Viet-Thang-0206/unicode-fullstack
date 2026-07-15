@@ -70,8 +70,6 @@ body {
     padding: 18px 20px;
 }
 
-
-
 /* Search */
 
 .search-box {
@@ -99,13 +97,6 @@ body {
     border-left: none;
 
     outline: none;
-}
-
-.search-box button {
-    border: none;
-    background: #222;
-    color: #fff;
-    cursor: pointer;
 }
 
 /* Action */
