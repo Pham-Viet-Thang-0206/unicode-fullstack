@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bakery</title>
     <!-- Reset Css -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <!-- Embed Font -->
@@ -13,8 +12,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita+Swashed:wght@300..900&display=swap"
         rel="stylesheet" />
+    <!-- Embed Font-Awesome -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Style Css -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Responsive Css -->
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <title>Bakery</title>
 </head>
 
 <body>
@@ -22,16 +29,19 @@
     <header class="header">
         <div class="container">
             <div class="menu">
-                <img src="./assets/imgs/logo.svg" alt="Keithston Coffee Shop" />
-
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Services</a></li>
+                <a href="#!"><img src="./assets/imgs/logo.svg" alt="Keithston Coffee Shop" class="logo" /></a>
+                <ul class="navbar-list" id="nav-list--pc">
+                    <li class="navbar-item"><a href="#!" class="navbar-link active">Home</a></li>
+                    <li class="navbar-item"><a href="#!" class="navbar-link">Blog</a></li>
+                    <li class="navbar-item"><a href="#!" class="navbar-link">Contact Us</a></li>
+                    <li class="navbar-item"><a href="#!" class="navbar-link">Services</a></li>
                 </ul>
             </div>
-
+        </div>
+    </header>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
             <div class="content">
                 <p>Delicious Cafe</p>
 
@@ -47,8 +57,33 @@
                 </div>
             </div>
         </div>
-    </header>
-
+    </section>
+    <!-- Tablet/mobile header -->
+    <div class="mobile-header">
+        <!-- tablet/mobile menu -->
+        <input type="checkbox" name="menu-checkbox" id="menu-checkbox" class="menu-checkbox" hidden>
+        <label for="menu-checkbox">
+            <i class="fa-solid fa-bars menu-header-icon"></i>
+        </label>
+        <!-- overlay -->
+        <label for="menu-checkbox" class="menu-overlay"></label>
+        <!-- menu content -->
+        <div class="menu-drawer">
+            <!-- menu-top -->
+             <div class="menu-drawer-top">
+                <a href="#!"><img src="./assets/imgs/logo.svg" alt="Keithston Coffee Shop" class="logo" /></a>
+                <label for="menu-checkbox"><i class="fa-regular fa-circle-xmark menu-drawer-close"></i></label>
+             </div>
+            <!-- nav mobile -->
+            <ul class="navbar-list" id="nav-list--mobile"></ul>
+            <script>
+                const navPc = document.querySelector("#nav-list--pc");
+                const navMobile = document.querySelector("#nav-list--mobile");
+                navMobile.innerHTML = navPc.innerHTML;
+            </script>
+        </div>
+    </div>
+    <!-- Main -->
     <main>
         <!-- Products -->
         <section class="products">
@@ -58,14 +93,14 @@
                     <!-- Item 1 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake1.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake1.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
                                 <span class="price">$40</span>
 
-                                <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -73,21 +108,21 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn">Add</button>
                             </div>
                         </div>
                     </div>
                     <!-- Item2 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake2.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake2.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
                                 <span class="price">$40</span>
 
-                                <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -95,21 +130,21 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn">Add</button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 3 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake3.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake3.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
-                                <spanclass="price">$40</spanclass=>
+                                <span class="price">$40</span>
 
-                                    <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -117,21 +152,21 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn"> Add </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 4 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake4.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake4.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
                                 <span class="price">$40</span>
 
-                                <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -139,21 +174,21 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn"> Add </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 5 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake5.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake5.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
                                 <span class="price">$40</span>
 
-                                <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -161,21 +196,21 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn"> Add </button>
                             </div>
                         </div>
                     </div>
                     <!-- Item 6 -->
                     <div class="product-item">
                         <div class="thumb">
-                            <img src="./assets/imgs/cake6.svg" alt="" />
+                            <a href="#!"><img src="./assets/imgs/cake6.svg" alt="" /></a>
                         </div>
 
                         <div class="product-content">
                             <div class="top">
                                 <span class="price">$40</span>
 
-                                <img src="./assets/imgs/product-icon.svg" alt="" class="icon" />
+                                <a href="#!"><img src="./assets/imgs/product-icon.svg" alt="" class="icon" /></a>
                             </div>
 
                             <div class="bottom">
@@ -183,7 +218,7 @@
                                     Whole Grain Bread
                                 </a>
 
-                                <a href="#" class="add-btn"> Add </a>
+                                <button class="add-btn"> Add </button>
                             </div>
                         </div>
                     </div>
@@ -193,7 +228,7 @@
         <!-- Discount -->
         <section class="discount">
             <div class="container">
-                <h2 class="heading">20% Off Your First Order</h2>
+                <h2 class="heading">20% Off &nbspYour First Order</h2>
                 <p class="desc">
                     Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur
                     vel bibenjgg
@@ -208,7 +243,7 @@
                 <nav class="navigation">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="" class="nav-btn">Cake</a>
+                            <a href="" class="nav-btn active">Cake</a>
                         </li>
                         <li class="nav-item">
                             <a href="" class="nav-btn">Muffins</a>
@@ -318,6 +353,7 @@
             </div>
         </section>
     </main>
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-top">
@@ -352,7 +388,7 @@
                     <address class="footer-list">
                         <a href="tel: (456) 789-12301" class="footer-text">(456) 789-12301</a>
                         <a href="mailto: info@modrino.co.uk" class="footer-text">info@modrino.co.uk</a>
-                        <a class="footer-text footer-address"> South 13th street, New york America </a>
+                        <p class="footer-text footer-address"> South 13th street, New york America </p>
                     </address>
                 </div>
                 <nav class="footer-column">
@@ -360,7 +396,7 @@
 
                     <ul class="footer-list">
                         <li>
-                            <a href="#!" class="footer-text">Home</a>
+                            <a href="#!" class="footer-text active">Home</a>
                         </li>
                         <li>
                             <a href="#!" class="footer-text">Blog</a>
