@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./output/output.css" />
+        <!-- Embed Font-Awesome -->
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+            integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <title>John - Portfolio</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="pt-8.25">
+            <div class="container">
+                <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+                <div class="flex">
+                    <label
+                        for="menu-toggle"
+                        class="ml-auto lg:hidden text-[30px] w-fit"
+                    >
+                        <i class="fa-solid fa-bars cursor-pointer"></i>
+                    </label>
+                </div>
+
+                <!-- Desktop navigation -->
+                <nav class="hidden lg:block">
+                    <ul
+                        class="flex gap-9 justify-end font-semibold text-[20px]"
+                    >
+                        <li>
+                            <a href="#!" class="hover">Works</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="hover">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#!" class="hover">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Overlay -->
+                <label
+                    for="menu-toggle"
+                    class="fixed inset-0 z-40 bg-black/30 invisible opacity-0 transition-opacity duration-300 peer-checked:visible peer-checked:opacity-100 lg:hidden"
+                ></label>
+                <!-- Mobile drawer -->
+                <div
+                    class="fixed inset-y-0 right-0 z-50 w-3/4 bg-white p-10 shadow-lg translate-x-full transition-transform duration-300 peer-checked:translate-x-0 lg:hidden"
+                >
+                    <label
+                        for="menu-toggle"
+                        class="block ml-auto w-fit cursor-pointer text-[20px]"
+                    >
+                        <i class="fa-solid fa-xmark"></i>
+                    </label>
+
+                    <!-- Mobile navigation -->
+                    <nav class="mt-10">
+                        <ul
+                            class="flex flex-col gap-6 font-semibold text-[20px]"
+                        >
+                            <li>
+                                <a href="#!" class="hover">Works</a>
+                            </li>
+
+                            <li>
+                                <a href="#!" class="hover">Blog</a>
+                            </li>
+
+                            <li>
+                                <a href="#!" class="hover">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Hero -->
+        <section class="mt-11.25 lg:mt-40">
+            <div class="container">
+                <div
+                    class="flex flex-col-reverse items-center gap-10 lg:flex lg:flex-row lg:justify-between lg:items-start"
+                >
+                    <div
+                        class="flex flex-col items-center justify-center lg:block"
+                    >
+                        <h1
+                            class="max-w-full text-[32px] text-center leading-[1.25] lg:text-left lg:max-w-111.5 font-bold lg:text-[44px] lg:leading-[1.4] primary-color"
+                        >
+                            Hi, I am John, Creative Technologist
+                        </h1>
+                        <p
+                            class="mt-10 max-w-full lg:max-w-124.25 font-normal text-base text-center lg:text-left leading-[1.5] primary-color"
+                        >
+                            Amet minim mollit non deserunt ullamco est sit
+                            aliqua dolor do amet sint. Velit officia consequat
+                            duis enim velit mollit. Exercitation veniam
+                            consequat sunt nostrud amet.
+                        </p>
+                        <a
+                            href="#!"
+                            class="bg-[#FF6464] mt-10 p-[11.5px_16px] min-w-52 font-medium text-white text-xl m-[0_auto]"
+                            >Download Resume</a
+                        >
+                    </div>
+                    <div
+                        class="bg-[#EDF7FA] rounded-full size-60.75 overflow-hidden"
+                    >
+                        <img
+                            src="./assets/imgs/hero.png"
+                            alt="John"
+                            class="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Recents -->
+        <section class="bg-[#EDF7FA] mt-18.25">
+            <div class="container">
+                <div class="p-[24px_0]">
+                    <!-- Recents heading -->
+                    <div class="lg:flex lg:justify-between lg:items-center">
+                        <h2
+                            class="text-center font-normal text-[22px] lg:text-left"
+                        >
+                            Recent posts
+                        </h2>
+                        <a
+                            href="#!"
+                            class="hidden lg:inline lg:text-[#00A8CC] lg:text-base lg:hover:underline"
+                            >View all</a
+                        >
+                    </div>
+                    <!-- Post -->
+                    <div class="gap-5 grid grid-cols-1 md:grid-cols-2 mt-6">
+                        <!-- Post 1 -->
+                        <article
+                            class="flex flex-col gap-4 bg-white p-6 rounded-sm"
+                        >
+                            <h3
+                                class="max-w-full lg:max-w-93.5 md:text-[26px] font-bold text-[22px] leading-[1.4] primary-color"
+                            >
+                                Making a design system from scratch
+                            </h3>
+                            <div class="flex items-center gap-5">
+                                <span
+                                    class="whitespace-nowrap font-normal text-[16px] md:text-[18px] primary-color"
+                                    >12 Feb 2020</span
+                                >
+                                <span
+                                    class="bg-black border w-px h-5.25 shrink-0"
+                                ></span>
+                                <span
+                                    class="whitespace-nowrap font-normal text-[16px] md:text-[18px] primary-color"
+                                    >Design, Pattern</span
+                                >
+                            </div>
+                            <p class="max-w-92 text-base primary-color">
+                                Amet minim mollit non deserunt ullamco est sit
+                                aliqua dolor do amet sint. Velit officia
+                                consequat duis enim velit mollit. Exercitation
+                                veniam consequat sunt nostrud amet.
+                            </p>
+                        </article>
+                        <!-- Post 2 -->
+                        <article
+                            class="flex flex-col gap-4 bg-white p-6 rounded-sm"
+                        >
+                            <h3
+                                class="max-w-full lg:max-w-93.5 md:text-[26px] font-bold text-[22px] leading-[1.4] primary-color"
+                            >
+                                Creating pixel perfect icons in Figma
+                            </h3>
+                            <div class="flex items-center gap-5">
+                                <span
+                                    class="whitespace-nowrap font-normal text-[16px] md:text-[18px] primary-color"
+                                    >12 Feb 2020</span
+                                >
+                                <span
+                                    class="bg-black border w-px h-5.25 shrink-0"
+                                ></span>
+                                <!-- Desktop -->
+                                <span
+                                    class="hidden md:inline whitespace-nowrap font-normal text-[16px] md:text-[18px] primary-color"
+                                    >Figma, Icon Design</span
+                                >
+                                <!-- Mobile -->
+                                <span
+                                    class="md:hidden whitespace-nowrap font-normal text-[16px] primary-color"
+                                    >Design, Pattern</span
+                                >
+                            </div>
+                            <p class="max-w-92 text-base primary-color">
+                                Amet minim mollit non deserunt ullamco est sit
+                                aliqua dolor do amet sint. Velit officia
+                                consequat duis enim velit mollit. Exercitation
+                                veniam consequat sunt nostrud amet.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured works -->
+        <section class="mt-8.25">
+            <div class="container">
+                <h2
+                    class="font-normal text-[18px] text-center lg:text-left md:text-[22px] primary-color"
+                >
+                    Featured works
+                </h2>
+                <div class="flex flex-col gap-7.75 mt-10">
+                    <!-- works 1 -->
+                    <article
+                        class="flex flex-col lg:flex-row lg:items-center justify-start gap-5 pb-4 border-b border-b-[#E0E0E0]"
+                    >
+                        <div
+                            class="rounded-md lg:w-61.5 max-w-full lg:h-45 h-57.5 overflow-hidden shrink-0"
+                        >
+                            <img
+                                src="./assets/imgs/works-1.png"
+                                alt="Designing Dashboards"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="whitespace-nowrap font-bold text-[24px] md:text-[30px] primary-color"
+                            >
+                                Designing Dashboards
+                            </h3>
+                            <div
+                                class="flex items-center gap-7 mt-7 mb-5 text-center"
+                            >
+                                <span
+                                    class="bg-[#142850] rounded-2xl w-15.5 font-black text-[16px] md:text-[18px] text-white"
+                                    >2020</span
+                                >
+                                <span
+                                    class="font-normal text-[#8695A4] text-[16px] md:text-[20px]"
+                                    >Dashboard</span
+                                >
+                            </div>
+                            <p class="max-w-148.5 font-normal text-base">
+                                Amet minim mollit non deserunt ullamco est sit
+                                aliqua dolor do amet sint. Velit officia
+                                consequat duis enim velit mollit. Exercitation
+                                veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </article>
+                    <!-- Work 2 -->
+                    <article
+                        class="flex flex-col lg:flex-row lg:items-center justify-start gap-5 pb-4 border-b border-b-[#E0E0E0]"
+                    >
+                        <div
+                            class="rounded-md lg:w-61.5 max-w-full lg:h-45 h-57.5 overflow-hidden shrink-0"
+                        >
+                            <img
+                                src="./assets/imgs/works-2.png"
+                                alt="Vibrant Portraits"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="whitespace-nowrap font-bold text-[24px] md:text-[30px] primary-color"
+                            >
+                                Vibrant Portraits of 2020
+                            </h3>
+                            <div
+                                class="flex items-center gap-7 mt-7 mb-5 text-center"
+                            >
+                                <span
+                                    class="bg-[#142850] rounded-2xl w-15.5 font-black text-[16px] md:text-[18px] text-white"
+                                    >2018</span
+                                >
+                                <span
+                                    class="font-normal text-[#8695A4] text-[16px] md:text-[20px]"
+                                    >Illustration</span
+                                >
+                            </div>
+                            <p class="max-w-148.5 font-normal text-base">
+                                Amet minim mollit non deserunt ullamco est sit
+                                aliqua dolor do amet sint. Velit officia
+                                consequat duis enim velit mollit. Exercitation
+                                veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </article>
+                    <!-- Work 3 -->
+                    <article
+                        class="flex flex-col lg:flex-row lg:items-center justify-start gap-5 pb-4 border-b border-b-[#E0E0E0]"
+                    >
+                        <div
+                            class="rounded-md lg:w-61.5 max-w-full lg:h-45 h-57.5 overflow-hidden shrink-0"
+                        >
+                            <img
+                                src="./assets/imgs/works-3.png"
+                                alt="Malayalam type"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <div>
+                            <h3
+                                class="whitespace-nowrap font-bold text-[24px] md:text-[30px] primary-color"
+                            >
+                                36 Days of Malayalam type
+                            </h3>
+                            <div
+                                class="flex items-center gap-7 mt-7 mb-5 text-center"
+                            >
+                                <span
+                                    class="bg-[#142850] rounded-2xl w-15.5 font-black text-[16px] md:text-[18px] text-white"
+                                    >2018</span
+                                >
+                                <span
+                                    class="font-normal text-[#8695A4] text-[16px] md:text-[20px]"
+                                    >Typography</span
+                                >
+                            </div>
+                            <p class="max-w-148.5 font-normal text-base">
+                                Amet minim mollit non deserunt ullamco est sit
+                                aliqua dolor do amet sint. Velit officia
+                                consequat duis enim velit mollit. Exercitation
+                                veniam consequat sunt nostrud amet.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="mt-20.5 mb-13.75">
+            <div class="flex justify-center items-center gap-9">
+                <a href="#!">
+                    <img src="./assets/imgs/fb.svg" alt="Fb" />
+                </a>
+                <a href="#!">
+                    <img src="./assets/imgs/insta.svg" alt="Insta" />
+                </a>
+                <a href="#!">
+                    <img src="./assets/imgs/twitter.svg" alt="Twitter" />
+                </a>
+                <a href="#!">
+                    <img src="./assets/imgs/Linkedin.svg" alt="Linkedin" />
+                </a>
+            </div>
+            <p class="mt-5.5 font-normal text-[14px] text-center primary-color">
+                Copyright ©2020 All rights reserved
+            </p>
+        </footer>
+    </body>
+</html>

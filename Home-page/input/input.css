@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap");
+@import "tailwindcss";
+@theme {
+    --font-sans: "Heebo", sans-serif;
+}
+@layer base {
+    a {
+        @apply inline-block text-inherit text-center no-underline;
+    }
+
+    ul,
+    ol {
+        @apply list-none;
+    }
+
+    img {
+        @apply block max-w-full;
+    }
+}
+
+.container {
+    @apply mx-auto w-230.5 max-w-[calc(100%-48px)];
+}
+
+.hover {
+    @apply hover:text-[#FF6464];
+}
+
+.primary-color {
+    @apply text-[#21243D];
+}
+
+/* responsive */

@@ -195,9 +195,7 @@
         width: min(calc(100% - 32px), 100%);
     }
 
-    .heading {
-        font-size: 3.6rem;
-    }
+    
 
     .btn {
         padding: 16px 28px;
