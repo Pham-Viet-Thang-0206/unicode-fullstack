@@ -19,7 +19,6 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-black: 900;
-    --leading-normal: 1.5;
     --radius-sm: 0.25rem;
     --radius-md: 0.375rem;
     --radius-2xl: 1rem;
@@ -219,9 +218,6 @@
   }
   .m-\[0_auto\] {
     margin: 0 auto;
-  }
-  .m-auto {
-    margin: auto;
   }
   .mt-5 {
     margin-top: calc(var(--spacing) * 5);
@@ -459,6 +455,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-center {
+    object-position: center;
+  }
   .p-6 {
     padding: calc(var(--spacing) * 6);
   }
@@ -553,9 +552,6 @@
   .text-\[\#8695A4\] {
     color: #8695A4;
   }
-  .text-\[px\] {
-    color: px;
-  }
   .text-white {
     color: var(--color-white);
   }
@@ -587,6 +583,10 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
+  .select-none {
+    -webkit-user-select: none;
+    user-select: none;
+  }
   .peer-checked\:visible:is(:where(.peer):checked ~ *) {
     visibility: visible;
   }
@@ -598,14 +598,36 @@
     opacity: 100%;
   }
   @media (width >= 48rem) {
+    .md\:flex {
+      display: flex;
+    }
     .md\:hidden {
       display: none;
     }
     .md\:inline {
       display: inline;
     }
+    .md\:h-45 {
+      height: calc(var(--spacing) * 45);
+    }
+    .md\:w-61\.5 {
+      width: calc(var(--spacing) * 61.5);
+    }
     .md\:grid-cols-2 {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:flex-row {
+      flex-direction: row;
+    }
+    .md\:items-center {
+      align-items: center;
+    }
+    .md\:justify-between {
+      justify-content: space-between;
+    }
+    .md\:text-base {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
     .md\:text-\[18px\] {
       font-size: 18px;
@@ -621,6 +643,14 @@
     }
     .md\:text-\[30px\] {
       font-size: 30px;
+    }
+    .md\:text-\[\#00A8CC\] {
+      color: #00A8CC;
+    }
+    @media (hover: hover) {
+      .md\:hover\:underline:hover {
+        text-decoration-line: underline;
+      }
     }
   }
   @media (width >= 64rem) {
