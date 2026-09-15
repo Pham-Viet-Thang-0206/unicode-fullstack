@@ -9,17 +9,13 @@ const countChars = (str) => {
     }
     // khởi tạo object rỗng
     const count = {};
-    // duyệt chuỗi 
+    // duyệt chuỗi
     for (let i = 0; i < str.length; i++) {
         let char = str.charAt(i);
-        // nếu tồn tại rồi thì tăng lên 1
-        if (count[char]) {
-            count[char]++;
-        } 
-        // nếu chưa có thì để là 1
-        else {
-            count[char] = 1;
+        if (!count[char]) {
+            count[char] = 0;
         }
+        count[char]++;
     }
     return count;
 };

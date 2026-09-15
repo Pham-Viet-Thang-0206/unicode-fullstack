@@ -23,4 +23,3 @@ const isPalindrome = (str) => {
 
 console.log(isPalindrome("Race car"));
 
-
