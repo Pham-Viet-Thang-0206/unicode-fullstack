@@ -7,7 +7,7 @@
 
 const rotateArray = (arr, x) => {
     if (!Array.isArray(arr)) {
-        return "Invalid array";
+        return null;
     }
     if (arr.length === 0) {
         return [];

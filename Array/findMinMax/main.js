@@ -5,8 +5,8 @@
 // mà không sử dụng các hàm toán học có sẵn như Math.max hay Math.min
 
 const findMinMax = (arr) => {
-    if (!Array.isArray(arr)) {
-        return "Invalid array";
+    if (!Array.isArray(arr) || !arr.length) {
+        return null;
     }
     let min = arr[0];
     let max = arr[0];
