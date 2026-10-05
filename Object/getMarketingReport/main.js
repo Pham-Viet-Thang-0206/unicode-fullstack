@@ -96,26 +96,7 @@ const orders = [
 const getMarketingReport = (orders) => {
     // Gom thông tin khách hàng
     const customers = orders.reduce((result, order) => {
-        if (!result[order.customerId]) {
-            result[order.customerId] = {
-                name: order.customerName,
-                totalSpent: 0,
-                categories: [],
-            };
-        }
-        if (order.status === "completed") {
-            for (const item of order.items) {
-                let total = item.price * item.quantity;
-                if (item.coupon === "SUMMER10") {
-                    total *= 0.9;
-                }
-                if (item.coupon === "VIP20") {
-                    total *= 0.8;
-                }
-                result[order.customerId].totalSpent += total;
-                result[order.customerId].categories.push(item.category);
-            }
-        }
+        
         return result;
     }, {});
     console.log(customers);

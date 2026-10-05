@@ -90,27 +90,26 @@ const orders = [
 
 //refactor
 function getCustomerStats(orders) {
-    return orders.reduce((result, order) => {
-        if (order.status === "completed") {
-            if (!result[order.customerId]) {
-                result[order.customerId] = {
-                    name: order.customerName,
-                    totalSpent: 0,
-                    uniquesProduct: [],
-                };
-            }
-            for (const item of order.items) {
-                let total = item.quantity * item.price;
-                if (order.coupon === "SUMMER10") {
-                    total *= 0.9;
-                } else if (order.coupon === "VIP20") {
-                    total *= 0.8;
-                }
-                result[order.customerId].totalSpent += total;
-                result[order.customerId].uniquesProduct.push(item.name);
-            }
+    const DISCOUNT_RATES = { SUMMER10: 0.9, VIP20: 0.8 };
+    const rawStats = orders.reduce((result, order) => {
+        if (order.status !== "completed") return result;
+        result[order.customerId] ??= {
+            name: order.customerName,
+            totalSpent: 0,
+            uniqueProducts: new Set(),
+        };
+        const rate = DISCOUNT_RATES[order.coupon] || 1;
+        for (const { name, price, quantity } of order.items) {
+            const total = price * quantity * rate;
+            result[order.customerId].totalSpent += total;
+            result[order.customerId].uniqueProducts.add(name);
         }
         return result;
     }, {});
+    Object.values(rawStats).forEach((customer) => {
+        customer.totalSpent = Math.round(customer.totalSpent * 100) / 100;
+        customer.uniqueProducts = [...customer.uniqueProducts];
+    });
+    return rawStats;
 }
 console.log(getCustomerStats(orders));

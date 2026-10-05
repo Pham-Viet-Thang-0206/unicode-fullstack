@@ -95,23 +95,19 @@ const orders = [
 // console.log(result);
 
 function getRevenueByCategory(orders) {
-    const result = orders.reduce((result, order) => {
-        if (order.status === "completed") {
-            for (const item of order.items) {
-                if (!result[item.category]) {
-                    result[item.category] = 0;
-                }
-                let total = item.quantity * item.price;
-                if (order.coupon === "SUMMER10") {
-                    total *= 0.9;
-                } else if (order.coupon === "VIP20") {
-                    total *= 0.8;
-                }
-                result[item.category] += total;
-            }
+    const DISCOUNT_RATES = { SUMMER10: 0.9, VIP20: 0.8 };
+    return orders.reduce((result, order) => {
+        if (order.status !== "completed") return result;
+        const rate = DISCOUNT_RATES[order.coupon] || 1;
+
+        for (const { category, quantity, price } of order.items) {
+            result[category] ??= 0;
+            const itemRevenue = price * quantity * rate;
+            result[category] =
+                Math.floor((result[category] + itemRevenue) * 100) / 100;
         }
+
         return result;
     }, {});
-    return result;
 }
 console.log(getRevenueByCategory(orders));

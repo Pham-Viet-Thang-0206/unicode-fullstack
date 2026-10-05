@@ -72,36 +72,30 @@ const orders = [
 
 const getTopCategory = (orders) => {
     // Lấy ra tổng revenue của từng category
-    const revenueByCategory = orders.reduce((result, order) => {
-        if (order.status === "completed") {
-            for (let item of order.items) {
-                if (!result[item.category]) {
-                    result[item.category] = 0;
-                }
-                if (order.coupon === "SUMMER10") {
-                    result[item.category] += item.quantity * item.price * 0.9;
-                } else if (order.coupon === "VIP20") {
-                    result[item.category] += item.quantity * item.price * 0.8;
-                } else {
-                    result[item.category] += item.quantity * item.price;
-                }
-            }
+    const DISCOUNT_RATES = { SUMMER10: 0.9, VIP20: 0.8 };
+    const revenue = orders.reduce((result, order) => {
+        if (order.status !== "completed") return result;
+        const rate = DISCOUNT_RATES[order.coupon] || 1;
+        for (const { category, price, quantity } of order.items) {
+            result[category] ??= 0;
+            const total = price * quantity * rate;
+            result[category] =
+                Math.floor((result[category] + total) * 100) / 100;
         }
         return result;
     }, {});
 
-    // Lấy ra cái max
-    const result = Object.entries(revenueByCategory).reduce(
-        (result, current) => {
-            if (current[1] > result.revenue) {
-                result.category = current[0];
-                result.revenue = current[1];
-            }
-            return result;
+    // Lấy ra cái Max
+    return Object.entries(revenue).reduce(
+        (result, [category, revenue]) =>
+            revenue > result.revenue ? { category, revenue } : result,
+        {
+            category: null,
+            revenue: 0,
         },
-        { category: null, revenue: 0 },
     );
-    return result;
 };
 
 console.log(getTopCategory(orders));
+
+
