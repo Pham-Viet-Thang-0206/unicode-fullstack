@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mx-auto py-5 max-w-200">
+        <h2 class="mb-3 font-semibold text-3xl">Blog</h2>
+        <input type="search" class="my-5 px-3 py-2 border border-gray-200 outline-none w-full js-search"
+            placeholder="Tìm kiếm..." />
+        <span class="bg-yellow-300 px-3 py-1 border border-gray-200 cursor-pointer newest-post" data-sort="desc">Mới nhất</span>
+        <span class="bg-white px-3 py-1 border border-gray-200 cursor-pointer oldest-post" data-sort="asc">Cũ nhất</span>
+
+        <div class="mt-5 js-post-list"></div>
+        <!-- <div class="mb-3 pb-3 border-gray-200 border-b">
+                <h3 class="mb-2 text-xl">Tiêu đề</h3>
+                <p>Nội dung</p>
+            </div> -->
+        <div class="invisible fixed inset-[0] flex justify-center items-center bg-[rgba(0,0,0,0.6)] opacity-0 transition-[opacity,visibility] duration-300 modal-backdrop">
+            <div class="relative bg-white p-[28px] rounded-[10px] w-[min(600px,90%)] modal-container">
+                <button
+                    class="top-1.5 right-1.5 absolute flex justify-center items-center bg-[#ebebeb] rounded-full w-7.5 h-7.5 text-xl cursor-pointer modal-close">&times;</button>
+                <div class="max-h-[80vh] overflow-y-auto model-content">
+                    <h1 class="modal-title"></h1>
+                    <p class="modal-content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>
